@@ -1,0 +1,32 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Pet the Cat</title>
+    <style>
+        #cat {
+            width: 200px;
+            height: 200px;
+            background-image: url('cat1.png'); /* Replace with your own cat image */
+            background-size: cover;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <h1>Pet the Cat</h1>
+    <div id="cat"></div>
+
+    <script>
+        var catElement = document.getElementById("cat");
+        var expressions = ["cat1.png", "cat2.png", "cat3.png"]; // Replace with your own cat expression images
+        var currentExpression = 0;
+
+        catElement.addEventListener("click", function() {
+            // Change the cat's expression
+            currentExpression = (currentExpression + 1) % expressions.length;
+            catElement.style.backgroundImage = "url('" + expressions[currentExpression] + "')";
+        });
+    </script>
+</body>
+</html>
